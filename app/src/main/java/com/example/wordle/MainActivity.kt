@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     val fourword = FourLetterWordList
@@ -12,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     var output = ""
     var guessCount = 0
     var word = fourword.getRandomFourLetterWord()
+    val debug = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,8 +23,11 @@ class MainActivity : AppCompatActivity() {
         val input = findViewById<EditText>(R.id.userText)
         val tvWordle = findViewById<TextView>(R.id.textView)
 
+        if(debug)
+            output = "DEBUG THE WORD IS: " + word
+
         button.setOnClickListener(){
-            guess = input.text.toString()
+            guess = input.text.toString().uppercase()
             guessCount++
             output += "\n" + "Guess #" + guessCount.toString() + ":   " + guess
             output += "\n" + "Guess #" + guessCount.toString() + ":   " + checkGuess()

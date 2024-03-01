@@ -53,6 +53,9 @@ class MainActivity : AppCompatActivity() {
             while(i < 4){
                 if(guess[i] == word[i])
                     correct += "O"
+                else if (guess[i] in word) {
+                    correct += "+"
+                }
                 else
                     correct += "X"
                 i++

@@ -8,4 +8,5 @@ Features:
 - If the letter does not exist within the correct word, then the key is marked as "X"
 
 DEMO
+
 ![alt text](https://github.com/BrandonK182/Wordle/blob/master/app/WordleDEMO.gif)
